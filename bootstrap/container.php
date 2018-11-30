@@ -3,8 +3,8 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 $containerBuilder = new \DI\ContainerBuilder;
-$containerBuilder->useAutowiring(false);
-$containerBuilder->addDefinitions(__DIR__ . '/../bootstrap/config.php');
+$containerBuilder->useAutowiring(false);//Esto es para que no inyecte de manera automatica las dependencias
+$containerBuilder->addDefinitions(base_path('/../bootstrap/config.php'));
 
 //Ahora generamos el container
 try{
@@ -13,5 +13,5 @@ try{
 }catch(Exception $e){
 
 }
-kint::dump($containerBuilder); //Para el debugging
+//kint::dump($container); //Para el debugging
 

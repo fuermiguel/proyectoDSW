@@ -12,10 +12,17 @@
         "symfony/validator": "^4.1",
         "respect/validation": "^1.1"
     },
-    "authors": [
-        {
-            "name": "Miguel",
-            "email": "fuermiguel@yahoo.es"
-        }
-    ]
+    "autoload": {
+        "psr-4": {
+            "Application\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "authors": [{
+        "name": "Miguel",
+        "email": "fuermiguel@yahoo.es"
+    }],
+    "description": ""
 }
