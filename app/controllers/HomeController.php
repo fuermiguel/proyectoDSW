@@ -3,7 +3,7 @@ namespace Application\Controllers; //Esta es una manera de encapsular elementos 
 
 class HomeController {
     public function index(){
-        
+        //kint::dump('hola Mundo');
     }
 }
 ?>

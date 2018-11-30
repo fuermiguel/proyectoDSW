@@ -4,7 +4,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $containerBuilder = new \DI\ContainerBuilder;
 $containerBuilder->useAutowiring(false);//Esto es para que no inyecte de manera automatica las dependencias
-$containerBuilder->addDefinitions(base_path('/../bootstrap/config.php'));
+$containerBuilder->addDefinitions(__DIR__ . '/../bootstrap/config.php');
 
 //Ahora generamos el container
 try{
