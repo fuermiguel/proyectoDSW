@@ -10,7 +10,8 @@
         "jasongrimes/paginator": "^1.0",
         "kint-php/kint": "^3.0",
         "symfony/validator": "^4.1",
-        "respect/validation": "^1.1"
+        "respect/validation": "^1.1",
+        "fzaninotto/faker": "^1.8"
     },
     "autoload": {
         "psr-4": {
