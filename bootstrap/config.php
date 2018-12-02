@@ -16,7 +16,7 @@ return [//Array asociativo
     //     return new HomeController($container->get(Doctrine::class));//Paso como parámetro una clase Doctrine
     // },
 
-    //Esta es la manera de hacerlo de foema dinámica
+    //Esta es la manera de hacerlo de forma dinámica diciendo al container como resolver las dependencias
     HomeController::class => \DI\create()->constructor(\DI\get(Doctrine::class)),
 
     Doctrine::class => function(\Psr\Container\ContainerInterface $container){

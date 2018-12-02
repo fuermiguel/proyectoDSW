@@ -30,8 +30,7 @@ class Doctrine{
 
         // Create a simple "default" Doctrine ORM configuration for Annotations
         $config = Setup::createAnnotationMetadataConfiguration(
-            $paths, $isDevMode, null, null, false
-        );
+            $paths, $isDevMode, null, null, false);//El false es parte de la configuración para las anotaciones.https://www.doctrine-project.org/api/orm/latest/Doctrine/ORM/Tools/Setup.html
 
         AnnotationRegistry::registerLoader('class_exists'); //No tengo muy claro que es lo que hace¿inidica la autocarga de clases con anotaciones  si existen?
 
