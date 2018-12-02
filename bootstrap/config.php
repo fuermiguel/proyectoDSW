@@ -1,20 +1,24 @@
 <?php
 
-use Application\Controllers\HomeController; //Hacemos una importación
+/****En este archivo definimos las inyecciones que queremos tener disponibles para el contenedor****/
 
-//Nota: autocargamos la clase , para cuando la llamemos desde index 
-//no de error de que el método no es estático
-return [
-    HomeController::class =>function() {//¿¿Estoy creando una función constructora estatuca??
+
+//Hacemos las importaciones necesarias
+use Application\Controllers\HomeController; 
+use Application\Providers\Doctrine;
+
+return [//Array asociativo
+    'config.database' => function(){
+        return parse_ini_file(base_path('app/Config/database.ini'));//https://secure.php.net/manual/es/function.parse-ini-file.php
+    },
+    HomeController::class =>function() {//Nota: autocargamos la clase (HomeController::class), para cuando la llamemos desde index 
+                                        //no de error de que el método no es estático
         return new HomeController;
+    },
+    Doctrine::class => function(\Psr\Container\ContainerInterface $container){
+        return new Doctrine($container);
     }
-];//Todo lo que queramos tener disponible autocargado dentro del contenedor php-di
+];
 
-echo ("EStoy en config");
-
-
-// La constante especial ::class está disponible a partir de PHP 5.5.0, y 
-// permite la resolución de nombres de clase completamente cualificados en 
-// la compilación. Esto es útil para clases en espacios de nombres: 
 ?>
 
