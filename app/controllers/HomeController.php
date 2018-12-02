@@ -3,6 +3,7 @@ namespace Application\Controllers; //Esta es una manera de encapsular elementos 
 
 use Application\Providers\Doctrine;
 use Application\Models\Entities\User;
+use Application\Providers\View;
 
 class HomeController {
 
@@ -15,6 +16,10 @@ class HomeController {
     public function index(){
         $user = $this->doctrine->em->getRepository(User::class)->find(1)
 ;        \kint::dump($user);
+    }
+
+    public function hello(string $name, View $view){
+        echo $view->render('home.twig',compact('name'));//compact Crea un array que contiene variables y sus valores
     }
 }
 ?>

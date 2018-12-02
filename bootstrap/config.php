@@ -6,6 +6,7 @@
 //Hacemos las importaciones necesarias
 use Application\Controllers\HomeController; 
 use Application\Providers\Doctrine;
+use Application\Providers\View;
 
 return [//Array asociativo
     'config.database' => function(){
@@ -21,7 +22,8 @@ return [//Array asociativo
 
     Doctrine::class => function(\Psr\Container\ContainerInterface $container){
         return new Doctrine($container);
-    }
+    },
+    View::class => \DI\create(View::class)
 ];
 
 ?>
