@@ -5,7 +5,7 @@ use Application\Providers\Doctrine;
 
 class HomeController {
     public function index(Doctrine $doctrine){//Inyectamos doctrine como dependencia y ya podemos usarlo desde el controlador 
-        \kint::dump('hola Mundo');
+        \kint::dump($doctrine);
     }
 }
 ?>
