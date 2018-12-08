@@ -6,6 +6,9 @@ error_reporting(E_ALL);// establece la directiva error_reporting en tiempo de ej
 
 $container = require __DIR__ . '/../bootstrap/container.php';
 
+//Cargamos las funciones Twing
+$container->get('SharedContainerTwig');
+
 $dispatcher = require __DIR__ . '/../routes/web.php';
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

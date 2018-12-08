@@ -1,12 +1,13 @@
 <?php
 namespace Application\Providers;
 
+use Application\Utils\TwigFunctions;
+
 class View {
     /**
      * @var \Twig_Environment
      */
-    protected $twig;
-
+    protected $twig; //https://twig.symfony.com/doc/2.x/api.html
     /**
      * view constructor
      */
@@ -16,7 +17,7 @@ class View {
         $twig = new \Twig_Environment($loader);
 
         $twigFunctions = new \Twig_simpleFunction(\TwigFunctions::class, function($method, $params = []){
-            return \TwigFunctions::$method($params);
+            return TwigFunctions::$method($params);
         });
 
         $twig->addFunction($twigFunctions);//Añado las funciones propias a las de twig
