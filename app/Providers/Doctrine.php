@@ -17,8 +17,7 @@ class Doctrine{
 
     public function __construct(ContainerInterface $container){
         $dbConfig = $container->get('config.database');
-      //  \Kint::dump($dbConfig);
-
+     
 
 /***Definimos las variables necesarias para la configuración de Doctrine  */
         $paths = [

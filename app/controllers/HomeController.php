@@ -14,7 +14,7 @@ class HomeController {
         $this->doctrine = $doctrine;
     }
     public function index(){
-        $user = $this->doctrine->em->getRepository(User::class)->find(1)
+        $user = $this->doctrine->em->getRepository(User::class)->find(2)
 ;        \kint::dump($user);
     }
 
